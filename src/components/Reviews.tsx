@@ -31,10 +31,6 @@ export default function Reviews() {
         
         {/* Header statement */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-gold/15 border border-brand-gold/30 rounded-full text-brand-gold text-xs font-semibold uppercase tracking-wider">
-            <MessageSquare className="w-3.5 h-3.5" />
-            <span>Social Proof</span>
-          </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-extrabold text-white leading-tight">
             Loved By Southern Food Lovers
           </h2>

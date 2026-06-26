@@ -26,7 +26,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-brand-charcoal select-none">
+    <div className="bg-brand-charcoal">
       {/* 1. Hero Spotlight Banner */}
       <Hero />
 
