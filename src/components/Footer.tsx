@@ -3,9 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Link } from 'react-router-dom';
-import { MapPin, Phone, Instagram, Clock, Utensils, Shield, Heart } from 'lucide-react';
-import { RESTAURANT_SETTINGS } from '../data';
+import { Link } from "react-router-dom";
+import { MapPin, Phone, Instagram, Clock, Utensils, Shield, Heart } from "lucide-react";
+import { RESTAURANT_SETTINGS } from "../data";
+import logo from "../assets/images/logo.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,20 +17,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand Intro Column */}
           <div className="md:col-span-1 space-y-4">
-            <Link to="/" className="flex flex-col select-none">
-              <span className="font-serif text-3xl font-extrabold tracking-tight text-brand-gold">
-                DeltaPot
-              </span>
-              <span className="font-sans text-[9px] font-bold tracking-[0.25em] text-brand-cream/60 -mt-1 uppercase">
-                Restaurant & Bar
-              </span>
+            <Link to="/" className="flex flex-col select-none group">
+              <img src={logo} className="w-[200px]" alt="" />
             </Link>
             <p className="text-sm font-sans text-brand-cream/60 leading-relaxed font-light">
               Experience the supreme, authentic flavors of Niger Delta and southern Nigerian traditional cuisine. Served hot in Lekki Phase 1, Lagos.
             </p>
             <div className="flex space-x-4 pt-2">
               <a
-                href={`https://wa.me/${RESTAURANT_SETTINGS.whatsapp.replace('+', '')}`}
+                href={`https://wa.me/${RESTAURANT_SETTINGS.whatsapp.replace("+", "")}`}
                 className="p-2 rounded-full bg-brand-dark hover:bg-brand-red border border-brand-gold/25 text-brand-gold hover:text-white transition-all duration-300"
                 aria-label="WhatsApp"
                 target="_blank"
@@ -54,21 +50,25 @@ export default function Footer() {
             <h3 className="font-serif text-lg font-bold text-brand-gold tracking-wide">Quick Links</h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link to="/" className="hover:text-brand-red transition-colors duration-200">Home</Link>
+                <Link to="/" className="hover:text-brand-red transition-colors duration-200">
+                  Home
+                </Link>
               </li>
               <li>
                 <Link to="/menu" className="hover:text-brand-red transition-colors duration-200 justify-between inline-flex items-center w-full">
                   <span>Explore Menu</span>
-                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-brand-red text-white uppercase font-bold tracking-widest font-sans">
-                    Fresh
-                  </span>
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-brand-red text-white uppercase font-bold tracking-widest font-sans">Fresh</span>
                 </Link>
               </li>
               <li>
-                <a href="/#contact" className="hover:text-brand-red transition-colors duration-200">Directions & Location</a>
+                <a href="/#contact" className="hover:text-brand-red transition-colors duration-200">
+                  Directions & Location
+                </a>
               </li>
               <li>
-                <a href="/#reviews" className="hover:text-brand-red transition-colors duration-200">Customer Testimonials</a>
+                <a href="/#reviews" className="hover:text-brand-red transition-colors duration-200">
+                  Customer Testimonials
+                </a>
               </li>
             </ul>
           </div>
@@ -100,14 +100,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" />
-                <address className="not-italic text-brand-cream/85 leading-relaxed">
-                  {RESTAURANT_SETTINGS.address}
-                </address>
-              </div>
-              <div className="pt-2">
-                <span className="inline-block px-3 py-1 bg-brand-dark text-xs border border-brand-gold/30 rounded text-brand-gold">
-                  Lekki Phase 1, Eti-Osa, Lagos
-                </span>
+                <address className="not-italic text-brand-cream/85 leading-relaxed">{RESTAURANT_SETTINGS.address}</address>
               </div>
             </div>
           </div>

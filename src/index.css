@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Fira+Code:wght@400;500&display=swap');
-
 @import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
 @theme {
   --color-brand-red: #ac2422;
@@ -12,9 +12,9 @@
   --color-brand-brown: #1c1714;
   --color-brand-gray: #7d726c;
   
-  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
-  --font-serif: "Playfair Display", serif;
-  --font-mono: "Fira Code", monospace;
+  --font-body: "Google Sans", sans-serif;
+  /* --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-heading: "Roboto Slab", serif; */
 }
 
 /* Custom gorgeous scrollbar */
@@ -40,7 +40,8 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  /* font-family: var(--font-heading); */
+  user-select: auto !important;
 }
 
 /* Smooth motion card animations */

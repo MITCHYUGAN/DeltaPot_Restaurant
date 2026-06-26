@@ -57,10 +57,10 @@ export default function Hero() {
             className="lg:col-span-7 space-y-6"
           >
             {/* Native badge with gold pulsing light */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-gold/10 border border-brand-gold/20 rounded-full text-brand-gold text-[11px] font-medium tracking-widest uppercase">
+            {/* <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-gold/10 border border-brand-gold/20 rounded-full text-brand-gold text-[11px] font-medium tracking-widest uppercase">
               <Flame className="w-3.5 h-3.5 text-brand-gold animate-pulse" />
               <span>Authentic Traditional Kitchen</span>
-            </motion.div>
+            </motion.div> */}
  
             {/* Headline with elegant serif display typography pairings */}
             <motion.div variants={itemVariants} className="space-y-4">
@@ -71,7 +71,7 @@ export default function Hero() {
                 </span>
                 <span className="text-brand-gold">.</span>
               </h1>
-              <p className="font-sans text-base sm:text-lg text-brand-cream/80 max-w-2xl font-light leading-relaxed">
+              <p className="font-body text-base sm:text-lg text-brand-cream/80 max-w-2xl font-medium leading-relaxed">
                 Authentic Southern Nigerian Cuisine — served with pride in <strong className="text-brand-gold font-medium">Lekki Phase 1</strong>. Indulge in traditional recipes prepared in custom clay pots for ultimate flavor preservation.
               </p>
             </motion.div>

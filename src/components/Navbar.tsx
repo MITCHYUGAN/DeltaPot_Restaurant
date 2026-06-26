@@ -3,11 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, Menu, X, Phone, Clock, Instagram } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { RESTAURANT_SETTINGS } from '../data';
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { ShoppingBag, Menu, X, Phone, Clock, Instagram } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import { RESTAURANT_SETTINGS } from "../data";
+import logo from "../assets/images/logo.png";
 
 interface NavbarProps {
   cartCount: number;
@@ -23,50 +24,20 @@ export default function Navbar({ cartCount, onOpenCart }: NavbarProps) {
   };
 
   const isActive = (path: string) => {
-    if (path === '/') {
-      return location.pathname === '/' || location.pathname === '';
+    if (path === "/") {
+      return location.pathname === "/" || location.pathname === "";
     }
     return location.pathname.startsWith(path);
   };
 
   const navLinks = [
-    { title: 'Home', path: '/' },
-    { title: 'Menu', path: '/menu' },
-    { title: 'Contact', path: '/#contact' },
+    { title: "Home", path: "/" },
+    { title: "Menu", path: "/menu" },
+    { title: "Contact", path: "/#contact" },
   ];
 
   return (
     <>
-      {/* Top Banner with Quick Info */}
-      <div className="bg-brand-charcoal text-white border-b border-brand-red/10 py-1.5 px-4 text-xs">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-4 font-sans text-[11px] uppercase tracking-widest text-brand-cream/60">
-          <div className="flex items-center gap-2">
-            <Clock className="w-3.5 h-3.5 text-brand-gold" />
-            <span>Hours: {RESTAURANT_SETTINGS.hours}</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a
-              href={`https://wa.me/${RESTAURANT_SETTINGS.whatsapp.replace('+', '')}`}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1.5 hover:text-brand-gold transition-colors duration-200"
-            >
-              <Phone className="w-3.5 h-3.5 text-brand-gold animate-pulse" />
-              <span>Call / WhatsApp: {RESTAURANT_SETTINGS.whatsappFormatted}</span>
-            </a>
-            <a
-              href={RESTAURANT_SETTINGS.instagramUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1.5 hover:text-brand-gold transition-colors duration-200"
-            >
-              <Instagram className="w-3.5 h-3.5 text-brand-gold" />
-              <span>{RESTAURANT_SETTINGS.instagram}</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Sticky Navbar */}
       <header className="sticky top-0 z-40 bg-brand-charcoal/95 backdrop-blur-md border-b border-brand-gold/10 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,15 +45,7 @@ export default function Navbar({ cartCount, onOpenCart }: NavbarProps) {
             {/* Logo Text in Editorial Serif */}
             <div className="flex-shrink-0">
               <Link to="/" className="flex flex-col select-none group">
-                <span className="font-serif text-2xl sm:text-3xl font-extrabold tracking-tight text-brand-gold group-hover:text-brand-red transition-colors duration-300">
-                  DeltaPot
-                </span>
-                <span className="font-sans text-[8px] sm:text-[9px] font-bold tracking-[0.25em] text-brand-cream/70 -mt-1 uppercase">
-                  Restaurant & Bar
-                </span>
-                <span className="font-sans text-[7px] text-brand-red font-semibold -mt-0.5 tracking-[0.1em] uppercase">
-                  {RESTAURANT_SETTINGS.tagline}
-                </span>
+                <img src={logo} className="w-[200px]" alt="" />
               </Link>
             </div>
 
@@ -90,8 +53,8 @@ export default function Navbar({ cartCount, onOpenCart }: NavbarProps) {
             <nav className="hidden md:flex space-x-8 items-center" id="desktop-nav">
               {navLinks.map((link) => {
                 // For Hash element like Contact
-                const isHash = link.path.startsWith('/#');
-                const pathTarget = isHash ? '/' : link.path;
+                const isHash = link.path.startsWith("/#");
+                const pathTarget = isHash ? "/" : link.path;
 
                 return isHash ? (
                   <a
@@ -106,9 +69,7 @@ export default function Navbar({ cartCount, onOpenCart }: NavbarProps) {
                     key={link.title}
                     to={pathTarget}
                     className={`font-sans text-sm font-semibold tracking-wider uppercase transition-all duration-200 py-1 border-b-2 ${
-                      isActive(link.path)
-                        ? 'text-brand-gold border-brand-gold'
-                        : 'text-brand-cream/80 border-transparent hover:text-brand-gold'
+                      isActive(link.path) ? "text-brand-gold border-brand-gold" : "text-brand-cream/80 border-transparent hover:text-brand-gold"
                     }`}
                   >
                     {link.title}
@@ -169,7 +130,7 @@ export default function Navbar({ cartCount, onOpenCart }: NavbarProps) {
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
               className="md:hidden border-t border-brand-gold/10 bg-brand-charcoal overflow-hidden"
@@ -177,7 +138,7 @@ export default function Navbar({ cartCount, onOpenCart }: NavbarProps) {
             >
               <div className="px-4 pt-4 pb-6 space-y-3">
                 {navLinks.map((link) => {
-                  const isHash = link.path.startsWith('/#');
+                  const isHash = link.path.startsWith("/#");
                   return isHash ? (
                     <a
                       key={link.title}
@@ -193,27 +154,49 @@ export default function Navbar({ cartCount, onOpenCart }: NavbarProps) {
                       to={link.path}
                       onClick={handleLinkClick}
                       className={`block px-3 py-2 rounded-md font-sans text-base font-semibold transition-colors duration-200 ${
-                        isActive(link.path)
-                          ? 'text-brand-gold bg-brand-dark'
-                          : 'text-brand-cream/90 hover:text-brand-gold hover:bg-brand-dark/50'
+                        isActive(link.path) ? "text-brand-gold bg-brand-dark" : "text-brand-cream/90 hover:text-brand-gold hover:bg-brand-dark/50"
                       }`}
                     >
                       {link.title}
                     </Link>
                   );
                 })}
-                 <Link
-                   to="/menu"
-                   onClick={handleLinkClick}
-                   className="w-full text-center flex items-center justify-center px-4 py-3 bg-brand-red text-white text-sm font-bold uppercase tracking-wider rounded-full shadow-md shadow-brand-red/15 hover:bg-brand-gold hover:text-brand-charcoal transition-all duration-300"
-                 >
-                   Order on WhatsApp
-                 </Link>
+                <Link
+                  to="/menu"
+                  onClick={handleLinkClick}
+                  className="w-full text-center flex items-center justify-center px-4 py-3 bg-brand-red text-white text-sm font-bold uppercase tracking-wider rounded-full shadow-md shadow-brand-red/15 hover:bg-brand-gold hover:text-brand-charcoal transition-all duration-300"
+                >
+                  Order on WhatsApp
+                </Link>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </header>
+      {/* Top Banner with Quick Info */}
+      <div className="bg-brand-charcoal text-white border-b border-brand-red/10 py-1.5 px-4 text-xs">
+        <div className="max-w-7xl mx-[auto] p-2 flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-4 font-sans text-[11px] uppercase tracking-widest text-brand-cream/60">
+          <div className="flex items-center gap-2">
+            <Clock className="w-3.5 h-3.5 text-brand-gold" />
+            <span>Hours: {RESTAURANT_SETTINGS.hours}</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <a
+              href={`https://wa.me/${RESTAURANT_SETTINGS.whatsapp.replace("+", "")}`}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1.5 hover:text-brand-gold transition-colors duration-200"
+            >
+              <Phone className="w-3.5 h-3.5 text-brand-gold animate-pulse" />
+              <span>Call / WhatsApp: {RESTAURANT_SETTINGS.whatsappFormatted}</span>
+            </a>
+            <a href={RESTAURANT_SETTINGS.instagramUrl} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-brand-gold transition-colors duration-200">
+              <Instagram className="w-3.5 h-3.5 text-brand-gold" />
+              <span>{RESTAURANT_SETTINGS.instagram}</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
