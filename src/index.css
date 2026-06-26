@@ -13,6 +13,7 @@
   --color-brand-gray: #7d726c;
   
   --font-body: "Google Sans", sans-serif;
+  --font-heading: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif
   /* --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
   --font-heading: "Roboto Slab", serif; */
 }
@@ -40,7 +41,7 @@ html {
 }
 
 body {
-  /* font-family: var(--font-heading); */
+  font-family: var(--font-body);
   user-select: auto !important;
 }
 

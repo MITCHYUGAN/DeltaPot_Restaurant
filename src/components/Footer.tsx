@@ -47,7 +47,7 @@ export default function Footer() {
 
           {/* Quick Links Column */}
           <div className="space-y-4">
-            <h3 className="font-serif text-lg font-bold text-brand-gold tracking-wide">Quick Links</h3>
+            <h3 className="font-heading text-lg font-bold text-brand-gold tracking-wide">Quick Links</h3>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link to="/" className="hover:text-brand-red transition-colors duration-200">
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Opening Hours Column */}
           <div className="space-y-4">
-            <h3 className="font-serif text-lg font-bold text-brand-gold tracking-wide">Dining Hours</h3>
+            <h3 className="font-heading text-lg font-bold text-brand-gold tracking-wide">Dining Hours</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2.5">
                 <Clock className="w-4 h-4 text-brand-gold flex-shrink-0 mt-0.5" />
@@ -96,7 +96,7 @@ export default function Footer() {
 
           {/* Contact and Address Column */}
           <div className="space-y-4">
-            <h3 className="font-serif text-lg font-bold text-brand-gold tracking-wide">Our Location</h3>
+            <h3 className="font-heading text-lg font-bold text-brand-gold tracking-wide">Our Location</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" />
