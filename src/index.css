@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Fira+Code:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #ac2422;
+  --color-brand-gold: #dfb15b;
+  --color-brand-gold-muted: #a0814c;
+  --color-brand-dark: #13100e;
+  --color-brand-cream: #fbf8f0;
+  --color-brand-charcoal: #0a0807;
+  --color-brand-brown: #1c1714;
+  --color-brand-gray: #7d726c;
+  
+  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "Fira Code", monospace;
+}
+
+/* Custom gorgeous scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0807;
+}
+::-webkit-scrollbar-thumb {
+  background: #dfb15b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ac2422;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0a0807;
+  color: #fbf8f0;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Smooth motion card animations */
+.glow-on-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-on-hover:hover {
+  box-shadow: 0 0 15px rgba(229, 145, 21, 0.2);
+  border-color: rgba(229, 145, 21, 0.4);
+}

@@ -1,0 +1,6 @@
+{
+  "name": "DeltaPot Restaurant and Bar",
+  "description": "Authentic Southern Nigerian Cuisine in Lekki Phase 1, Lagos. Explore our traditional delicacies like Banga Soup, Seafood Okro, fisherman Soup, and order directly on WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
