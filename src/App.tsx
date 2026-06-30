@@ -107,8 +107,8 @@ export default function App() {
 
 Total: ${totalDisplay}
 
-My delivery address:
-_[Please specify your delivery location here]_`;
+Name: [Customer fills this]
+Delivery Address: [Customer fills this]`;
 
     const encodedText = encodeURIComponent(textPayload);
     const whatsappUrl = `https://wa.me/${RESTAURANT_SETTINGS.whatsapp.replace("+", "")}?text=${encodedText}`;
