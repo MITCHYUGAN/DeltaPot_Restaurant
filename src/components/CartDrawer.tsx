@@ -61,8 +61,8 @@ export default function CartDrawer({
 ${orderListText}
 Total: ${totalText}
 
-My delivery address:
-${address.trim() ? address.trim() : '_[Insert delivery address here]_'}${
+Delivery Address:
+${address.trim() ? address.trim() : '[Insert delivery address here]_'}${
       notes.trim() ? `\n\nSpecial Instructions:\n${notes.trim()}` : ''
     }`;
 
